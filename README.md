@@ -24,7 +24,6 @@ git clone https://github.com/Zyl-SZU/scMIC.git
 - ```scMIC.py```: defines the architecture of the whole network
 - ```main.py```: run the model
 
-
 #### Example command
 Take the dataset "PBMC-10k" as an example
 
