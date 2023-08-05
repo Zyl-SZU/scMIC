@@ -169,7 +169,9 @@ if __name__ == '__main__':
         ae_n_enc_1=opt.args.ae_n_enc_1, ae_n_enc_2=opt.args.ae_n_enc_2,
         ae_n_dec_1=opt.args.ae_n_dec_1, ae_n_dec_2=opt.args.ae_n_dec_2,
         n_input=opt.args.n_d2, n_z=opt.args.n_z).to(opt.args.device)
-
+    
+    if opt.args.pretrain:
+        opt.args.dropout = 0.4
     gae1 = IGAE(
         gae_n_enc_1=opt.args.gae_n_enc_1, gae_n_enc_2=opt.args.gae_n_enc_2,
         gae_n_dec_1=opt.args.gae_n_dec_1, gae_n_dec_2=opt.args.gae_n_dec_2,
