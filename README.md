@@ -26,21 +26,15 @@ git clone https://github.com/Zyl-SZU/scMIC.git
 
 
 #### Example command
-Take the datasets "PBMC-10k" and "Ma-2020-1" as an example
+Take the dataset "PBMC-10k" as an example
 
-Using pre-trained model
+- Step 1: Pre-training model
+```
+python main.py --name PBMC-10k --pretrain True
+```
+- Step 2: Formal training model with pre-trained model
 ```
 python main.py --name PBMC-10k
-```
-```
-python main.py --name Ma-2020-1
-```
-Pre-training model command
-```
-python main.py --name PBMC-10k --pretrain True --dropout 0.4
-```
-```
-python main.py --name Ma-2020-1 --pretrain True --dropout 0.4
 ```
 
 ## Data availability
