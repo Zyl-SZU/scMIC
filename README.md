@@ -49,7 +49,7 @@ python main.py --name PBMC-10k
 
 ## Comparison methods availability
 |  Method              | Source |
-| --------------------------- | ----------------------- | ----------------------- |
+| --------------------------- | ----------------------- |
 | ***scziDesk***             | ***https://github.com/xuebaliang/scziDesk*** |
 | ***scGAE***          | ***https://github.com/ZixiangLuo1161/scGAE***     |
 | ***scTAG***              | ***https://github.com/Philyzh8/scTAG*** |
