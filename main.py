@@ -1,5 +1,6 @@
 import tqdm
 from torch.optim import Adam
+from time import time
 
 from utils import *
 from encoder import *
@@ -187,6 +188,7 @@ if __name__ == '__main__':
         n_input=opt.args.n_d2, n_z=opt.args.n_z, dropout=opt.args.dropout).to(opt.args.device)
 
     if opt.args.pretrain:
+        t0 = time()
         pretrain_ae(ae1, Xr)
         pretrain_ae(ae2, Xa)
 
@@ -196,7 +198,12 @@ if __name__ == '__main__':
         model = scMIC(ae1, ae2, gae1, gae2, n_node=Xr.shape[0]).to(opt.args.device)
 
         pre_train(model, Xr, Ar, Xa, Aa)
+        t1 = time()
+        print("Time_cost: {},".format(t1-t0))
     else:
+        t0 = time()
         model = scMIC(ae1, ae2, gae1, gae2, n_node=Xr.shape[0]).to(opt.args.device)
 
         train(model, Xr, Ar, Xa, Aa, y)
+        t1 = time()
+        print("Time_cost: {},".format(t1-t0))
