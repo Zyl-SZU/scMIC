@@ -50,6 +50,7 @@ def target_distribution(Q):
 # clustering guidance
 def distribution_loss(Q, P):
     loss = F.kl_div((Q[0].log() + Q[1].log() + Q[2].log()) / 3, P, reduction='batchmean')
+    # loss = F.kl_div(Q[0].log(), P, reduction='batchmean')
 
     return loss
 
