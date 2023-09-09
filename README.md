@@ -9,6 +9,7 @@ The source code and input data of scMIC
 - Sklearn --- 1.2.2
 - Munkres --- 1.1.4
 - tqdm ---4.65.0
+- Matplotlib ---3.7.1
 
 ## Usage
 #### Clone this repo.
@@ -23,6 +24,8 @@ git clone https://github.com/Zyl-SZU/scMIC.git
 - ```encoder.py```: defines the AE, GAE and q_distribution
 - ```scMIC.py```: defines the architecture of the whole network
 - ```main.py```: run the model
+- ```run.py```: conduct parameter analysis and ablation studies 
+- ```tsne_plot.ipynb```: t-SNE visualization
 
 #### Example command
 Take the dataset "PBMC-10k" as an example
