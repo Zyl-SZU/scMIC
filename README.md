@@ -47,6 +47,17 @@ python main.py --name PBMC-10k
 | ***PBMC-CITE***              | ***10x Multiome***           | ***https://support.10xgenomics.com/single-cell-gene-expression/datasets/3.0.0/pbmc_10k_protein_v3*** |
 | ***Ma-2020***             | ***SHARE-seq*** | ***https://scglue.readthedocs.io/en/latest/data.html***        |
 
+## Comparison methods availability
+|  Method              | Source |
+| --------------------------- | ----------------------- | ----------------------- |
+| ***scziDesk***             | ***https://github.com/xuebaliang/scziDesk*** |
+| ***scGAE***          | ***https://github.com/ZixiangLuo1161/scGAE***     |
+| ***scTAG***              | ***https://github.com/Philyzh8/scTAG*** |
+| ***DCCA***             | ***https://github.com/cmzuo11/DCCA***        |
+| ***DSIR***             | ***https://github.com/Polytech-bioinf/Deep-structure-integrative-representation***        |
+| ***DEMOC***             | ***https://github.com/LongLVv/DEMOC_code***        |
+| ***scMCs***             | ***http://www.sdu-idea.cn/codes.php?name=ScMCs***        |
+
 ## Triple-omics integration
 #### Quick start
 ```
