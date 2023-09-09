@@ -110,7 +110,7 @@ def train(model, X1, A1, X2, A2, y):
         optimizer.step()
 
         # clustering & evaluation
-        ari, nmi, ami, acc, _ = assignment((Q1[0] + Q2[0]).data, y)
+        ari, nmi, ami, acc, y_pred = assignment((Q1[0] + Q2[0]).data, y)
 
         pbar.set_postfix({'loss':'{0:1.4f}'.format(loss), 'ARI':'{0:1.4f}'.format(ari),'NMI':'{0:1.4f}'.format(nmi),
                           'AMI':'{0:1.4f}'.format(ami),'ACC':'{0:1.4f}'.format(acc)})
@@ -125,10 +125,10 @@ def train(model, X1, A1, X2, A2, y):
     pbar.close()
     
     print("Best_epoch: {},".format(best_epoch),"ARI: {:.4f},".format(opt.args.ari), "NMI: {:.4f},".format(opt.args.nmi), 
-            "AMI: {:.4f}".format(opt.args.ami), "ACC: {:.4f},".format(opt.args.acc))
+            "AMI: {:.4f}".format(opt.args.ami), "ACC: {:.4f}".format(opt.args.acc))
     
     print("Final_epoch: {},".format(epoch),"ARI: {:.4f},".format(ari), "NMI: {:.4f},".format(nmi), 
-            "AMI: {:.4f}".format(ami), "ACC: {:.4f},".format(acc))
+            "AMI: {:.4f}".format(ami), "ACC: {:.4f}".format(acc))
 
     np.save('./output/{}/seed{}_label.npy'.format(opt.args.name, opt.args.seed), y_pred)
     np.save('./output/{}/seed{}_z.npy'.format(opt.args.name, opt.args.seed), ((Z1 + Z2) /2).cpu().detach().numpy())
@@ -199,11 +199,11 @@ if __name__ == '__main__':
 
         pre_train(model, Xr, Ar, Xa, Aa)
         t1 = time()
-        print("Time_cost: {},".format(t1-t0))
+        print("Time_cost: {}".format(t1-t0))
     else:
         t0 = time()
         model = scMIC(ae1, ae2, gae1, gae2, n_node=Xr.shape[0]).to(opt.args.device)
 
         train(model, Xr, Ar, Xa, Aa, y)
         t1 = time()
-        print("Time_cost: {},".format(t1-t0))
+        print("Time_cost: {}".format(t1-t0))
