@@ -132,6 +132,7 @@ def train(model, X1, A1, X2, A2, y):
     np.save('./output/{}/seed{}_label.npy'.format(opt.args.name, opt.args.seed), y_pred)
     np.save('./output/{}/seed{}_z.npy'.format(opt.args.name, opt.args.seed), ((Z1 + Z2) /2).cpu().detach().numpy())
 
+
 if __name__ == '__main__':
     # setup
     print("setting:")
