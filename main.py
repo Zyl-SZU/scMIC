@@ -129,8 +129,8 @@ def train(model, X1, A1, X2, A2, y):
     print("Final_epoch: {},".format(epoch),"ARI: {:.4f},".format(ari), "NMI: {:.4f},".format(nmi), 
             "AMI: {:.4f}".format(ami), "ACC: {:.4f},".format(acc))
 
-    # np.save('./output/{}/seed{}_label.npy'.format(opt.args.name, opt.args.seed), y_pred)
-    # np.save('./output/{}/seed{}_z.npy'.format(opt.args.name, opt.args.seed), ((Z1 + Z2) /2).cpu().detach().numpy())
+    np.save('./output/{}/seed{}_label.npy'.format(opt.args.name, opt.args.seed), y_pred)
+    np.save('./output/{}/seed{}_z.npy'.format(opt.args.name, opt.args.seed), ((Z1 + Z2) /2).cpu().detach().numpy())
 
 if __name__ == '__main__':
     # setup
